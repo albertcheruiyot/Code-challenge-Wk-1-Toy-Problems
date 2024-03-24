@@ -20,6 +20,9 @@ function getBasicSalaryAndBenefits() {
       console.log(`Gross Salary: ${grossSalary}`)
       netSalary= calculateNetSalary();
       console.log(`Net Salary: ${netSalary}`)
+      console.log(`Payee: ${deductPayeeKRA()*grossSalary}`)
+      console.log(`NHIF: ${deductNHIF()}`)
+      console.log(`NSSF: ${deductNSSF()}`)
 
       // Close the readline interface
       rl.close();
@@ -31,24 +34,24 @@ function getBasicSalaryAndBenefits() {
 getBasicSalaryAndBenefits();
 
 //Calculate how much KRA will deduct
-function deductKRA(){
+function deductPayeeKRA(){
     let taxRate;
 
     switch (true) {
         case (grossSalary <= 24000):
-            taxRate = 10.0;
+            taxRate = 0.1;
             break;
         case (grossSalary >= 24001 && grossSalary <= 32333):
-            taxRate = 25.0;
+            taxRate = 0.25;
             break;
         case (grossSalary >= 32334 && grossSalary <= 500000):
-            taxRate = 30.0;
+            taxRate = 0.3;
             break;
         case (grossSalary >= 500001 && grossSalary <= 800000):
-            taxRate = 32.5;
+            taxRate = 0.325;
             break;
         default:
-            taxRate = 35.0;
+            taxRate = 0.35;
     }
 
     return taxRate;
@@ -133,7 +136,7 @@ function calculateGrossSalary(basicSalary, benefits){
 //Calculate net salary
 function calculateNetSalary(){
 
-    totalDeductions=Number(deductKRA())+Number(deductNHFF())+Number(deductNSSF());
+    totalDeductions=Number(deductPayeeKRA()*grossSalary)+Number(deductNHIF())+Number(deductNSSF());
     netSalary=grossSalary-totalDeductions;
 
     return netSalary;

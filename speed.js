@@ -19,7 +19,7 @@ function calculatePoints(speed, totalPoints) {
       rl.close();
       return;
     } else {
-      console.log(`Points: ${totalPoints}`);
+      console.log(`Demerit points: ${totalPoints}`);
     }
   }
 
