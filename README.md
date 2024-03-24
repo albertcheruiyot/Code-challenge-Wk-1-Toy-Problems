@@ -29,7 +29,7 @@ To run the Grade Calculator, follow these steps:
 5. When prompted, enter the student's marks (0-100) and press Enter.
 
 The program will then display the grade based on the marks you've entered.
-# Challenge 2: Speed Detector
+## Challenge 2: Speed Detector
 A JavaScript program designed to monitor driving speeds and enforce safe driving practices by calculating demerit points for speeds above legal limits. a program that takes as input the speed of a car e.g 80. If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/s above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
 
 For example, if the speed is 80, it should print: “Points: 2”. If the driver gets more than 12 points, the function should print: “License suspended”.
@@ -49,7 +49,7 @@ To run the Speed Detector, follow these steps:
 4. Run the command `node speed.js`.
 5. When prompted, follow prompt instructions.
 
-# Challenge 3: Net Salary Calculator
+## Challenge 3: Net Salary Calculator
 A program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary.
 
 **NB:** Use KRA, NHIF, and NSSF values provided in the link below.
